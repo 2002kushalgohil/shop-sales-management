@@ -10,15 +10,7 @@
 </head>
 
 <body>
-    <div class="dashboardSection">
-        <!-- <div class="dashboardFormDiv">
-            <form action="">
-                <label for="">Name</label>
-                <input type="text">
-                <label for="">Etc</label>
-                <input type="text">
-            </form>
-        </div> -->
+    <div class="dashboardSection">     
         <div class="purchase-table">
             <table class="dashboard-content-table">
                 <thead>
@@ -28,7 +20,11 @@
                         <th>Item</th>
                         <th>Quantity</th>
                         <th>Total Price</th>
-                        <th class="actionsTh"><div>Delete</div><div>Update</div></th>
+                        <th>Amount Due</th>
+                        <th class="actionsTh">
+                            <div>Update</div>
+                            <div>Delete</div>
+                        </th>
                         <th>Status</th>
                     </tr>
                 </thead>
@@ -39,7 +35,8 @@
                         <td>Parle G</td>
                         <td>2</td>
                         <td>10</td>
-                        <td class="dashboardTableBtn"><button class="dashboardTableDelete">Delete</button><button class="dashboardTableUpdate">Update</button></td>
+                        <td>9</td>
+                        <td class="dashboardTableBtn"><button class="dashboardTableUpdate">Update</button><button class="dashboardTableDelete">Delete</button></td>
                         <td class="dashboardUnPaid">Unpaid</td>
                     </tr>
                     <tr>
@@ -48,16 +45,18 @@
                         <td>Red paint</td>
                         <td>1</td>
                         <td>100</td>
-                        <td class="dashboardTableBtn"><button class="dashboardTableDelete">Delete</button><button class="dashboardTableUpdate">Update</button></td>
+                        <td>NULL</td>
+                        <td class="dashboardTableBtn"><button class="dashboardTableUpdate">Update</button><button class="dashboardTableDelete">Delete</button></td>
                         <td class="dashboardPaid">Paid</td>
                     </tr>
                     <tr>
                         <td>3</td>
                         <td>Abhinav Bankar</td>
-                        <td>Underware</td>
+                        <td>LED Light</td>
                         <td>2</td>
                         <td>1000</td>
-                        <td class="dashboardTableBtn"><button class="dashboardTableDelete">Delete</button><button class="dashboardTableUpdate">Update</button></td>
+                        <td>9</td>
+                        <td class="dashboardTableBtn"><button class="dashboardTableUpdate">Update</button><button class="dashboardTableDelete">Delete</button></td>
                         <td class="dashboardUnPaid">Unpaid</td>
                     </tr>
                     <tr>
@@ -66,7 +65,8 @@
                         <td>Mobile</td>
                         <td>1</td>
                         <td>50000</td>
-                        <td class="dashboardTableBtn"><button class="dashboardTableDelete">Delete</button><button class="dashboardTableUpdate">Update</button></td>
+                        <td>9</td>
+                        <td class="dashboardTableBtn"><button class="dashboardTableUpdate">Update</button><button class="dashboardTableDelete">Delete</button></td>
                         <td class="dashboardUnPaid">Unpaid</td>
                     </tr>
                 </tbody>
