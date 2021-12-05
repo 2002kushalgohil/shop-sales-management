@@ -24,7 +24,7 @@
 
                 <form>
                     <div class="inputBx">
-                        <span>Registered Username</span>
+                        <span>Username</span>
                         <input name="email" type="email" />
                     </div>
                     <div class="inputBx">
