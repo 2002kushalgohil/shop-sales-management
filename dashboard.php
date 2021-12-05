@@ -15,7 +15,7 @@
             <table class="dashboard-content-table">
                 <thead>
                     <tr>
-                        <th>Sr No</th>
+                        <th>Sr No.</th>
                         <th>Customer Name</th>
                         <th>Item</th>
                         <th>Quantity</th>
