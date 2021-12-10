@@ -10,6 +10,10 @@
 </head>
 
 <body>
+    <nav>
+        <img src="./Assets/images/logo.png" alt="">
+        <h1>Sales Management System</h1>
+    </nav>
     <div class="dahsboardFormDiv">
         <form class="dahsboardForm">
             <div>
