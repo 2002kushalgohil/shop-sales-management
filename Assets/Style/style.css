@@ -267,3 +267,42 @@
 .dashboardTableUpdate {
   background-color: rgb(94, 129, 94);
 }
+
+
+.dahsboardForm{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dahsboardForm div{
+  padding: 10px;
+}
+
+.dahsboardForm p{
+  text-align: center;
+  padding: 7px;
+  font-weight: bold;
+  color: var(--background-Color);
+  background-color:var(--main-Color);
+  border-radius: 10px 10px 0px 0px;
+}
+
+.dahsboardForm input{
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 15px;
+  outline: none;
+  border: 2px solid var(--text-Color);
+}
+
+.dahsboardForm button{
+  padding: 5px 10px 5px 10px;
+  border-radius: 7px;
+  font-weight: 500;
+  color: #ffff;
+  cursor: pointer;
+  background-color: var(--main-Color);
+  outline: none;
+  border: none;
+}

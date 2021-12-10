@@ -10,6 +10,33 @@
 </head>
 
 <body>
+    <div class="dahsboardFormDiv">
+        <form class="dahsboardForm">
+            <div>
+                <p>Customer Name</p>
+                <input type="text">
+            </div>
+            <div>
+                <p>Item</p>
+                <input type="text">
+            </div>
+            <div>
+                <p>Quantity</p>
+                <input type="number">
+            </div>
+            <div>
+                <p>Total Price</p>
+                <input type="number">
+            </div>
+            <div>
+                <p>Amount Due</p>
+                <input type="number">
+            </div>
+            <div>
+                <button>Submit</button>
+            </div>
+        </form>
+    </div>
     <div class="dashboardSection">     
         <div class="purchase-table">
             <table class="dashboard-content-table">
@@ -45,7 +72,7 @@
                         <td>Red paint</td>
                         <td>1</td>
                         <td>100</td>
-                        <td>NULL</td>
+                        <td>0</td>
                         <td class="dashboardTableBtn"><button class="dashboardTableUpdate">Update</button><button class="dashboardTableDelete">Delete</button></td>
                         <td class="dashboardPaid">Paid</td>
                     </tr>
