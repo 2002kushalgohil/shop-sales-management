@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="./Assets/Style/style.css?v=<?php echo time(); ?>">
     <title>Document</title>
 </head>
-
 <body>
     <nav>
         <img src="./Assets/images/logo.png" alt="">
         <h1>Sales Management System</h1>
+            <div class="dahsboardForm">
+            <a href="logout.php"> <button>Log Out</button></a>
+            </div>
     </nav>
     <div class="dahsboardFormDiv">
         <form class="dahsboardForm">

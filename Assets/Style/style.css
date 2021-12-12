@@ -137,6 +137,11 @@
   .loginSignupSection .contentBx .formBx {
     width: 70%;
   }
+  
+  .logo{
+    margin-top: 6rem;
+    width: 20rem;
+  }
 }
 
 @media (max-width: 850px) {
@@ -163,6 +168,10 @@
     padding: 40px;
     margin: 50px;
   }
+  .logo{
+    margin-top: 5rem;
+    width: 10rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -171,11 +180,21 @@
     padding: 40px;
     margin: 50px;
   }
+  
+  .logo{
+    margin-top: 4rem;
+    width: 13rem;
+  }
 }
 
 @media (max-width: 500px) {
   .gifImage {
     width: 25vw;
+  }
+  
+  .logo{
+    margin-top: 2rem;
+    width: 10rem;
   }
 }
 /* ---------------- Nav Bar ------------- */

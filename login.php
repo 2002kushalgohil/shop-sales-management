@@ -17,6 +17,7 @@
         <div class="contentBx">
             <img src="./Assets/images/loginGif1.gif" class="gifImage gifImage1" alt="" />
             <img src="./Assets/images/loginGif2.gif" class="gifImage gifImage2" alt="" />
+            <img src="./Assets/images/logo.png" alt="" class="logo">
             <div class="formBx">
                 <h2 class="active">
                     <a href="#">Login</a>
