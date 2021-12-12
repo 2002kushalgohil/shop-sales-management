@@ -33,7 +33,9 @@
   align-items: center;
   justify-content: center;
 }
-
+.logo{
+  width: 200px;
+}
 .loginSignupSection .imgBx img {
   width: 90%;
 }
