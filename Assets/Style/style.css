@@ -83,7 +83,6 @@
   display: inline-block;
   color: var(--main-Color);
   font-weight: 300;
-  font-size: 16px;
   letter-spacing: 1px;
 }
 
@@ -108,7 +107,29 @@
   font-weight: 500;
   cursor: pointer;
 }
+/* added by V */
+.regBtn{
+  width: 100%;
+  padding: 10px 20px;
+  outline: none;
+  font-weight: 400;
+  border: 1px solid var(--text-Color);
+  font-size: 16px;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  background: var(--main-Color);
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+.regBtn a{
+  text-decoration: none;
+  color:#fff
+}
 
+.regBtn:hover{
+  background: var(--hover-Color);
+}
 .loginSignupSection .contentBx .formBx .inputBx input[type="submit"]:hover {
   background: var(--hover-Color);
 }
@@ -138,11 +159,13 @@
 @media (max-width: 1200px) {
   .loginSignupSection .contentBx .formBx {
     width: 70%;
+    height: 70%;
+    /* margin-bottom: 2rem; */
   }
   
   .logo{
-    margin-top: 6rem;
-    width: 20rem;
+    margin-top: 4rem;
+    width: 13rem;
   }
 }
 
@@ -154,21 +177,20 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
   }
 
   .loginSignupSection .contentBx {
     background: var(--background-Color);
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     z-index: 1;
   }
   .loginSignupSection .contentBx .formBx {
-    width: 100%;
     width: 80%;
     padding: 40px;
-    margin: 50px;
+    margin: 0 5rem 2rem 5rem;
   }
   .logo{
     margin-top: 5rem;
@@ -179,13 +201,13 @@
 @media (max-width: 600px) {
   .loginSignupSection .contentBx .formBx {
     width: 100%;
-    padding: 40px;
-    margin: 50px;
+    padding: 4rem;
+    margin: 0 5rem 2rem 5rem;
   }
   
   .logo{
     margin-top: 4rem;
-    width: 13rem;
+    width: 10rem;
   }
 }
 
@@ -247,7 +269,7 @@ nav img{
 .actionsTh{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .actionsTh *{
@@ -256,7 +278,7 @@ nav img{
 }
 
 .dashboard-content-table td {
-  padding: 12px 15px;
+  padding:10px;
 }
 
 .dashboard-content-table tbody tr {
@@ -265,24 +287,24 @@ nav img{
 
 .dashboard-content-table tbody {
   color: var(--text-Color);
+  position: relative;
 }
 
 .dashboardUnPaid {
   width: 5vw;
   background-color: rgb(255, 71, 71);
-  color: #ffff;
+  color: #fff;
 }
 
 .dashboardPaid {
   width: 5vw;
   background-color: rgb(66, 122, 66);
-  color: #ffff;
+  color: #fff;
 }
-
 .dashboardTableBtn {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content:space-evenly;
 }
 
 .dashboardTableBtn button {
@@ -297,10 +319,18 @@ nav img{
 }
 
 .dashboardTableDelete {
-  background-color: rgb(255, 126, 126);
+  background-color:var(--main-Color);
+  color:#fff;
+}
+.dashboardTableDelete:hover{
+  background-color: rgb(253, 53, 53);
 }
 .dashboardTableUpdate {
-  background-color: rgb(94, 129, 94);
+  background-color:var(--main-Color);
+  color:#fff;
+}
+.dashboardTableUpdate:hover{
+  background-color: rgb(17, 136, 1);
 }
 
 
@@ -340,4 +370,19 @@ nav img{
   background-color: var(--main-Color);
   outline: none;
   border: none;
+}
+/* V styles this */
+.olinks{
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+}
+.olinks div{
+  margin: 0 1rem;
+}
+tbody .error{
+  position:absolute;
+  top:0;
+  left:0;
+  transition: all 3s;
 }
