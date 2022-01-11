@@ -13,8 +13,6 @@
             <img src="./Assets/images/loginGif.gif" alt="" />
         </div>
         <div class="contentBx">
-            <!-- <img src="./Assets/images/loginGif1.gif" class="gifImage gifImage1" alt="" />
-            <img src="./Assets/images/loginGif2.gif" class="gifImage gifImage2" alt="" /> -->
             <img src="./Assets/images/logo.png" alt="" class="logo">
             <div class="formBx">
                 <h2 class="active">
@@ -33,7 +31,7 @@
                         <input type="submit" name="submit" value="Add Customer"/>
                     </div>
                     <div class="inputBx">
-                    <button class="regBtn"><a href="dashboard.php">Go To Home</a></button>
+                     <button class="regBtn"><a href="dashboard.php">Go To Home</a></button>
                     </div>
                 </form>
             </div>
@@ -49,35 +47,39 @@ if(isset($_POST['submit']))
 	{
 	    $user=strtolower($_POST['cname']);  
         $pass=strtolower($_POST['mob']); 
-        if(strlen($pass)!=10){
+        if(strlen($pass)!=10)
+        {
             echo'<script> alert(" mobile No must be 10 digit !!") </script>';
         }
-        else{
+        else
+        {
 
-        mysqli_select_db($conn,'sam') or die(mysqli_error($conn));  
-        $query=mysqli_query($conn,"SELECT * FROM customer WHERE cname='".$user."'");
-        $numrows=mysqli_num_rows($query); 
-	    if($numrows==0) 
-            { 
-                $query = mysqli_query($conn,"INSERT INTO customer(cname,mobile) VALUES ('$user','$pass')");
-                if($query){
-                    echo '<script>';
-                    echo 'alert(" Customer Registered Successfully !!")';
+                mysqli_select_db($conn,'sam') or die(mysqli_error($conn));  
+                $query=mysqli_query($conn,"SELECT * FROM customer WHERE cname='".$user."'");
+                $numrows=mysqli_num_rows($query); 
+                if($numrows==0) 
+                    { 
+                        $query = mysqli_query($conn,"INSERT INTO customer(cname,mobile) VALUES ('$user','$pass')");
+                        if($query)
+                        {
+                            echo '<script>';
+                            echo 'alert(" Customer Registered Successfully !!")';
+                            echo'</script>';
+                        }
+                    }	  	
+                else
+                {
+                    echo'<script>';
+                    echo 'alert(" Customer Already Exists !! ")';
                     echo'</script>';
                 }
-            }	  	
-        else{
-             echo'<script>';
-             echo 'alert(" Customer Already Exists !! ")';
-             echo'</script>';
         }
     }
-	}
-	else
-	     {  
-        	echo'<script>';
-            echo' alert("All fields are required!")';
-            echo '</script>';  
-         }  
+  else
+    {  
+        echo'<script>';
+        echo' alert("All fields are required!")';
+        echo '</script>';  
+    }  
 }
 ?>

@@ -1,10 +1,13 @@
 <?php
-if (!isset($_SESSION)) { session_start(); }
+    if (!isset($_SESSION))
+     { 
+         session_start(); 
+     }
 
-$_SESSION = array(); 
+    $_SESSION = array(); 
 
-session_destroy(); 
+    session_destroy(); 
 
-header("Location: login.php");
-exit();
+    header("Location: login.php");
+    exit();
 ?>

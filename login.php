@@ -42,45 +42,48 @@
 </body>
 </html>
 <?php 
-include('conn.php');
-if(isset($_POST['submit']))
-{
-  if(!empty($_POST['username']) && !empty($_POST['password']))
-	{
-	    $user=$_POST['username'];  
-        $pass=$_POST['password']; 
-        mysqli_select_db($conn,'user') or die(mysqli_error($conn));  
-        $query=mysqli_query($conn,"SELECT * FROM login WHERE user_id='".$user."' AND password='".$pass."'");
-        $numrows=mysqli_num_rows($query); 
-	    if($numrows!=0) 
-            { 
-                while($row=mysqli_fetch_assoc($query))  
-                    {  
-                        $dbusername=$row['user_id'];  
-                        $dbpassword=$row['password'];  
-                    } 
-                if($user == $dbusername && $pass == $dbpassword)  
-                    {  
-                session_start();  
-                $_SESSION['sess_user']=$user;  
-                header("location: dashboard.php");
-                    }  else{
-                        echo'<script>';
-                        echo 'alert(" User Not Found")';
-                        echo'</script>';
-                   }
-            }	  	
-        else{
-             echo'<script>';
-             echo 'alert("Invalid username or password!")';
-             echo'</script>';
+    include('conn.php');
+    if(isset($_POST['submit']))
+    {
+    if(!empty($_POST['username']) && !empty($_POST['password']))
+        {
+            $user=$_POST['username'];  
+            $pass=$_POST['password']; 
+            mysqli_select_db($conn,'user') or die(mysqli_error($conn));  
+            $query=mysqli_query($conn,"SELECT * FROM login WHERE user_id='".$user."' AND password='".$pass."'");
+            $numrows=mysqli_num_rows($query); 
+            if($numrows!=0) 
+                { 
+                    while($row=mysqli_fetch_assoc($query))  
+                        {  
+                            $dbusername=$row['user_id'];  
+                            $dbpassword=$row['password'];  
+                        } 
+                    if($user == $dbusername && $pass == $dbpassword)  
+                        {  
+                            session_start();  
+                            $_SESSION['sess_user']=$user;  
+                            header("location: dashboard.php");
+                        }
+                    else
+                        {
+                            echo'<script>';
+                            echo 'alert(" User Not Found")';
+                            echo'</script>';
+                        }
+                }	  	
+            else
+                {
+                    echo'<script>';
+                    echo 'alert("Invalid username or password!")';
+                    echo'</script>';
+                }
         }
-	}
-	else
-	     {  
-        	echo'<script>';
+        else
+        {  
+            echo'<script>';
             echo' alert("All fields are required!")';
             echo '</script>';  
-         }  
-}
+        }  
+    }
 ?>

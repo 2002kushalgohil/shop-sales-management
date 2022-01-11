@@ -13,8 +13,6 @@
             <img src="./Assets/images/loginGif.gif" alt="" />
         </div>
         <div class="contentBx">
-            <!-- <img src="./Assets/images/loginGif1.gif" class="gifImage gifImage1" alt="" />
-            <img src="./Assets/images/loginGif2.gif" class="gifImage gifImage2" alt="" /> -->
             <img src="./Assets/images/logo.png" alt="" class="logo">
             <div class="formBx">
                 <h2 class="active">
@@ -28,8 +26,7 @@
                     <div class="inputBx">
                         <span>Item Price : </span>
                         <input name="iprice" type="text" />
-                    </div>
-                    
+                    </div>                   
                     <div class="inputBx">
                         <span>Item Quantity : </span>
                         <input name="iqty" type="text" />
@@ -42,7 +39,7 @@
                         <input type="submit" name="submit" value="Add Item"/>
                     </div>
                     <div class="inputBx">
-                    <button class="regBtn"><a href="dashboard.php">Go To Home</a></button>
+                        <button class="regBtn"><a href="dashboard.php">Go To Home</a></button>
                     </div>
                 </form>
             </div>
@@ -61,35 +58,35 @@ if(isset($_POST['submit']))
         $iqty=$_POST['iqty'];  
         $icat=strtolower($_POST['icat']); 
         if($iprice<=0 || $iqty<=0)
-        {
-            echo'<script> alert(" Numbers Cannot be negative or zero !!") </script>';
-        }
+            {
+                echo'<script> alert(" Numbers Cannot be negative or zero !!") </script>';
+            }
         else
-        {
-            mysqli_select_db($conn,'sam') or die(mysqli_error($conn));  
-            $query=mysqli_query($conn,"SELECT * FROM item WHERE iname='".$iname."'");
-            $numrows=mysqli_num_rows($query); 
-            if($numrows==0) 
-                { 
-                    $query = mysqli_query($conn,"INSERT INTO item(iname,iprice,qty,category) VALUES ('$iname','$iprice','$iqty','$icat')");
-                    if($query)
-                        {
-                            echo '<script>';
-                            echo 'alert(" Item Added to Stock Successfully !!")';
-                            echo'</script>';
-                        }
-                    else
-                        {
-                            echo'<script> alert(" ~ Item Not Inserted !!") </script>';
-                        }
-                }	  	
-            else
-                {
-                echo'<script>';
-                echo 'alert(" Item Already Exists !! ")';
-                echo'</script>';
-                }
-        }
+            {
+                mysqli_select_db($conn,'sam') or die(mysqli_error($conn));  
+                $query=mysqli_query($conn,"SELECT * FROM item WHERE iname='".$iname."'");
+                $numrows=mysqli_num_rows($query); 
+                if($numrows==0) 
+                    { 
+                        $query = mysqli_query($conn,"INSERT INTO item(iname,iprice,qty,category) VALUES ('$iname','$iprice','$iqty','$icat')");
+                        if($query)
+                            {
+                                echo '<script>';
+                                echo 'alert(" Item Added to Stock Successfully !!")';
+                                echo'</script>';
+                            }
+                        else
+                            {
+                                echo'<script> alert(" ~ Item Not Inserted !!") </script>';
+                            }
+                    }	  	
+                else
+                    {
+                        echo'<script>';
+                        echo 'alert(" Item Already Exists !! ")';
+                        echo'</script>';
+                    }
+            }
 	}
   else
     {  

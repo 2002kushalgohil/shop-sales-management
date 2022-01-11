@@ -325,6 +325,10 @@ nav img{
 .dashboardTableDelete:hover{
   background-color: rgb(253, 53, 53);
 }
+.dashboardTableDelete a{
+  text-decoration: none;
+  color:#fff;
+}
 .dashboardTableUpdate {
   background-color:var(--main-Color);
   color:#fff;
@@ -332,7 +336,10 @@ nav img{
 .dashboardTableUpdate:hover{
   background-color: rgb(17, 136, 1);
 }
-
+.dashboardTableUpdate a{
+  text-decoration: none;
+  color:#fff;
+}
 
 .dahsboardForm{
   display: flex;
@@ -371,6 +378,7 @@ nav img{
   outline: none;
   border: none;
 }
+
 /* V styles this */
 .olinks{
   display: flex;
