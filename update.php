@@ -66,11 +66,11 @@
                     <input type="text" name="iname" value="<?php echo $data['iname'] ?>" placeholder="Item Name" Required>
                 </div>
                 <div>
-                    <p>Item Price</p>
+                    <p>Item Quantity</p>
                     <input type="number" name="iqty" value="<?php echo $data['iqty'] ?>" placeholder="Item quantity" Required>
                 </div>
                 <div>
-                    <p>Quantity</p>
+                    <p>Item Price</p>
                     <input type="number" name="iprice" value="<?php echo $data['iprice'] ?>" placeholder="Item price" Required>
                 </div>
                 <div>

@@ -360,12 +360,22 @@ nav img{
   border-radius: 10px 10px 0px 0px;
 }
 
-.dahsboardForm input{
+.dahsboardForm input,.dahsboardForm select{
   margin-top: 5px;
   padding: 5px;
   border-radius: 15px;
   outline: none;
   border: 2px solid var(--text-Color);
+}
+.dahsboardForm select{
+  -webkit-appearance: none;
+   -moz-appearance: none;
+  width: 12rem;
+  color:var(--text-Color)
+}
+.dahsboardForm option{
+  background-color: #3357fc;
+  color:#fff;
 }
 
 .dahsboardForm button{
