@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./Assets/Style/style.css?v=<?php echo time(); ?>">
     <title>Register @ Portal</title>
 </head>
+
 <body>
     <section class="loginSignupSection">
         <div class="imgBx">
@@ -30,7 +32,11 @@
                         <input name="password" type="password" />
                     </div>
                     <div class="inputBx">
-                        <input type="submit" name="register" value="Register"/>
+                        <span>Security Key</span>
+                        <input name="key" type="password" />
+                    </div>
+                    <div class="inputBx">
+                        <input type="submit" name="register" value="Register" />
                     </div>
                     <div class="inputBx">
                         <button class="regBtn"><a href="login.php">Login</a></button>
@@ -40,39 +46,39 @@
         </div>
     </section>
 </body>
+
 </html>
-<?php 
+<?php
 include('conn.php');
-if(isset($_POST['register']))
-{
-  if(!empty($_POST['username']) && !empty($_POST['password']))
-	{
-	    $user=$_POST['username'];  
-        $pass=$_POST['password']; 
-        mysqli_select_db($conn,'user') or die(mysqli_error($conn));  
-        $query=mysqli_query($conn,"SELECT * FROM login WHERE user_id='".$user."'");
-        $numrows=mysqli_num_rows($query); 
-	    if($numrows==0) 
-            {
-                // "INSERT INTO login (user_id,password) VALUES ('$user','$pass')";
-                $query = mysqli_query($conn,"INSERT INTO login (user_id,password) VALUES ('$user','$pass')");
-                if($query){
+if (isset($_POST['register'])) {
+    if ($_POST['key'] == "KG22VA30") {
+        if (!empty($_POST['username']) && !empty($_POST['password'])) {
+            $user = $_POST['username'];
+            $pass = $_POST['password'];
+            mysqli_select_db($conn, 'user') or die(mysqli_error($conn));
+            $query = mysqli_query($conn, "SELECT * FROM login WHERE user_id='" . $user . "'");
+            $numrows = mysqli_num_rows($query);
+            if ($numrows == 0) {
+                $query = mysqli_query($conn, "INSERT INTO login (user_id,password) VALUES ('$user','$pass')");
+                if ($query) {
                     echo '<script>';
                     echo 'alert(" User Registered Successfully !!")';
-                    echo'</script>';
+                    echo '</script>';
                 }
-            }	  	
-        else{
-             echo'<script>';
-             echo 'alert("User Already Exits !!")';
-             echo'</script>';
+            } else {
+                echo '<script>';
+                echo 'alert("User Already Exits !!")';
+                echo '</script>';
+            }
+        } else {
+            echo '<script>';
+            echo ' alert("All fields are required!")';
+            echo '</script>';
         }
-	}
-	else
-	     {  
-        	echo'<script>';
-            echo' alert("All fields are required!")';
-            echo '</script>';  
-         }  
+    }else{
+        echo '<script>';
+        echo 'alert(" X - Not Authorised To Register");';
+        echo '</script>';
+    }
 }
 ?>

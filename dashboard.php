@@ -2,10 +2,10 @@
 include('conn.php');
 ?>
 <?php
+session_start();
 if (!isset($_SESSION['sess_user'])) {
-    session_start();
+    header('Location: login.php');
 }
-header("Location : login.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,13 +17,15 @@ header("Location : login.php");
     <link rel="stylesheet" href="./Assets/Style/style.css?v=<?php echo time(); ?>">
     <title>Home @ Portal</title>
 </head>
-
 <body>
     <nav>
         <img src="./Assets/images/logo.png" alt="">
         <h1>Sales Management System</h1>
         <div class="dahsboardForm">
             <a href="logout.php"><button>Log Out</button></a>
+        </div>
+        <div class="dahsboardForm">
+            <a href="login.php"><button>Admin</button></a>
         </div>
     </nav>
     <div class="dahsboardFormDiv">
@@ -39,7 +41,7 @@ header("Location : login.php");
             <div>
                 <p>Customer Name</p>
                 <select name="cname" id="customer_name">
-                <option value="none" selected >Select customer</option>
+                    <option value="none" selected>Select customer</option>
                     <?php
                     mysqli_select_db($conn, 'sam') or die("cannot select DB");
                     $result = mysqli_query($conn, "SELECT * FROM customer");
@@ -56,7 +58,7 @@ header("Location : login.php");
             <div>
                 <p>Item Name</p>
                 <select name="iname" id="item_name">
-                <option value="none" selected>Select Item</option>   
+                    <option value="none" selected>Select Item</option>
                     <?php
                     mysqli_select_db($conn, 'sam') or die("cannot select DB");
                     $result = mysqli_query($conn, "SELECT * FROM item");
