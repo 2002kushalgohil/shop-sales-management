@@ -10,39 +10,31 @@
 </head>
 
 <body>
-    <section class="loginSignupSection">
-        <div class="imgBx">
-            <img src="./Assets/images/loginGif.gif" alt="" />
-        </div>
-        <div class="contentBx">
-            <img src="./Assets/images/loginGif1.gif" class="gifImage gifImage1" alt="" />
-            <img src="./Assets/images/loginGif2.gif" class="gifImage gifImage2" alt="" />
-            <img src="./Assets/images/logo.png" alt="" class="logo">
-            <div class="formBx">
-                <h2 class="active">
-                    <a href="#">Register</a>
-                </h2>
-                <form action="" method="POST" name="login">
-                    <div class="inputBx">
-                        <span>Username</span>
-                        <input name="username" type="text" />
-                    </div>
-                    <div class="inputBx">
-                        <span>Password</span>
-                        <input name="password" type="password" />
-                    </div>
-                    <div class="inputBx">
-                        <span>Security Key</span>
-                        <input name="key" type="password" />
-                    </div>
-                    <div class="inputBx">
-                        <input type="submit" name="register" value="Register" />
-                    </div>
-                    <div class="inputBx">
-                        <button class="regBtn"><a href="login.php">Login</a></button>
-                    </div>
-                </form>
-            </div>
+    <section class="section">
+        <img class="gifImg gifImg1" src="./Assets//images//one.gif" alt="">
+        <img class="gifImg gifImg2" src="./Assets//images//two.gif" alt="">
+        <div class="LSDiv">
+            <h2>
+                Register
+            </h2>
+            <form action="" method="POST" name="login">
+                <div class="LSDivInpDiv">
+                    <span>Username</span>
+                    <input name="username" type="text" />
+                </div>
+                <div class="LSDivInpDiv">
+                    <span>Password</span>
+                    <input name="password" type="password" />
+                </div>
+                <div class="LSDivInpDiv">
+                    <span>Security Key</span>
+                    <input name="key" type="password" />
+                </div>
+                <div class="LSBtsDiv">
+                    <button class="btn"><a href="login.php">Already a Member ?</a></button>
+                    <button class="btn" type="submit" name="register" value="Register">Submit</button>
+                </div>
+            </form>
         </div>
     </section>
 </body>
@@ -62,22 +54,22 @@ if (isset($_POST['register'])) {
                 $query = mysqli_query($conn, "INSERT INTO login (user_id,password) VALUES ('$user','$pass')");
                 if ($query) {
                     echo '<script>';
-                    echo 'alert(" User Registered Successfully !!")';
+                    echo 'alert("User Registered Successfully")';
                     echo '</script>';
                 }
             } else {
                 echo '<script>';
-                echo 'alert("User Already Exits !!")';
+                echo 'alert("User Already Exits")';
                 echo '</script>';
             }
         } else {
             echo '<script>';
-            echo ' alert("All fields are required!")';
+            echo ' alert("All fields are required")';
             echo '</script>';
         }
-    }else{
+    } else {
         echo '<script>';
-        echo 'alert(" X - Not Authorised To Register");';
+        echo 'alert("Not Authorised To Register");';
         echo '</script>';
     }
 }

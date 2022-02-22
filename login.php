@@ -10,35 +10,27 @@
 </head>
 
 <body>
-    <section class="loginSignupSection">
-        <div class="imgBx">
-            <img src="./Assets/images/loginGif.gif" alt="" />
-        </div>
-        <div class="contentBx">
-            <img src="./Assets/images/loginGif1.gif" class="gifImage gifImage1" alt="" />
-            <img src="./Assets/images/loginGif2.gif" class="gifImage gifImage2" alt="" />
-            <img src="./Assets/images/logo.png" alt="" class="logo">
-            <div class="formBx">
-                <h2 class="active">
-                    <a href="#">Login</a>
-                </h2>
-                <form action="" method="POST" name="login">
-                    <div class="inputBx">
-                        <span>Username</span>
-                        <input name="username" type="text" />
-                    </div>
-                    <div class="inputBx">
-                        <span>Password</span>
-                        <input name="password" type="password" />
-                    </div>
-                    <div class="inputBx">
-                        <input type="submit" name="submit" value="sign in" />
-                    </div>
-                    <div class="inputBx">
-                        <button class="regBtn"><a href="register.php">Register</a></button>
-                    </div>
-                </form>
-            </div>
+    <section class="section">
+        <img class="gifImg gifImg1" src="./Assets//images//one.gif" alt="">
+        <img class="gifImg gifImg2" src="./Assets//images//two.gif" alt="">
+        <div class="LSDiv">
+            <h2>
+                Login
+            </h2>
+            <form action="" method="POST" name="login">
+                <div class="LSDivInpDiv">
+                    <span>Username</span>
+                    <input name="username" type="text" />
+                </div>
+                <div class="LSDivInpDiv">
+                    <span>Password</span>
+                    <input name="password" type="password" />
+                </div>
+                <div class="LSBtsDiv">
+                    <button class="btn"><a href="register.php">Create a Account</a></button>
+                    <button class="btn" type="submit" name="submit" value="sign in">Submit</button>
+                </div>
+            </form>
         </div>
     </section>
 </body>
@@ -70,16 +62,15 @@ if (isset($_POST['submit'])) {
                 }
             } else {
                 echo '<script>';
-                echo 'alert("Invalid username or password!")';
+                echo 'alert("Invalid username or password")';
                 echo '</script>';
             }
         } else {
             echo '<script>';
-            echo ' alert("All fields are required!")';
+            echo ' alert("All fields are required")';
             echo '</script>';
         }
-    }
-    else{
+    } else {
         header("Location: admin.php");
     }
 }

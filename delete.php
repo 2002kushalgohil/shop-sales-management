@@ -11,7 +11,6 @@
     else
     {
         echo '<script>';
-        echo 'alert("Error deleting record";)';
+        echo 'alert("Error deleting record")';
         echo '</script>';
     }
-?>

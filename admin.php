@@ -9,7 +9,7 @@
 </head>
 <body style="display: flex;justify-content:center;background-color:beige;">
     <h1 >This portal is under construction ... ! </h1>
-    <div class="dahsboardForm">
+    <div>
             <a href="dashboard.php"><button>Go to Dashboard !</button></a>
         </div>
 </body>

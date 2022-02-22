@@ -1,406 +1,200 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  /* border: 1px solid red; */
+  text-decoration: none;
+  /* border: 2px solid red; */
 }
-
 :root {
-  --main-Color: #4163f7;
-  --hover-Color: #2b52ff;
-  --text-Color: #607d8b;
-  --background-Color: #ffff;
+  --border-radius: 15px;
+  --inputBx-border-radius: 10px;
+  --main-color: #0c63e4;
+  --border-color: #1b1b1b59;
 }
 
-/* ---------------------Login--------------- */
+.btn * {
+  color: #ffff;
+}
 
-.loginSignupSection {
-  position: relative;
+.btn {
+  padding: 7px 10px 7px 10px;
+  border-radius: 7px;
+  background-color: var(--main-color);
+  color: #ffff;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.section {
   width: 100%;
   height: 100vh;
   display: flex;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-.loginSignupSection .imgBx {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   position: relative;
-  width: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.logo{
-  width: 200px;
-}
-.loginSignupSection .imgBx img {
-  width: 90%;
 }
 
-.loginSignupSection .contentBx {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  height: 100%;
-  flex-direction: column;
-}
-
-.loginSignupSection .contentBx .formBx {
-  width: 50%;
-}
-
-.loginSignupSection .contentBx .formBx .active {
-  border-bottom: 4px solid var(--main-Color);
-}
-
-.loginSignupSection .contentBx .formBx h2 {
-  cursor: pointer;
-  color: var(--text-Color);
-  font-weight: 600;
-  font-size: 1.5em;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  display: inline-block;
-  letter-spacing: 1px;
-  margin-right: 20px;
-}
-.loginSignupSection .contentBx .formBx h2 a {
-  color: var(--text-Color);
-  text-decoration: none;
-}
-
-.loginSignupSection .contentBx .formBx .inputBx {
-  margin-bottom: 20px;
-}
-
-.loginSignupSection .contentBx .formBx .inputBx span {
-  font-size: 16px;
-  margin-bottom: 5px;
-  display: inline-block;
-  color: var(--main-Color);
-  font-weight: 300;
-  letter-spacing: 1px;
-}
-
-.loginSignupSection .contentBx .formBx .inputBx input {
-  width: 100%;
-  padding: 10px 20px;
-  outline: none;
-  font-weight: 400;
-  border: 1px solid var(--text-Color);
-  font-size: 16px;
-  letter-spacing: 1px;
-  color: var(--text-Color);
-  background: transparent;
-  border-radius: 30px;
-}
-
-.loginSignupSection .contentBx .formBx .inputBx input[type="submit"] {
-  background: var(--main-Color);
-  color: var(--background-Color);
-  outline: none;
-  border: none;
-  font-weight: 500;
-  cursor: pointer;
-}
-/* added by V */
-.regBtn{
-  width: 100%;
-  padding: 10px 20px;
-  outline: none;
-  font-weight: 400;
-  border: 1px solid var(--text-Color);
-  font-size: 16px;
-  letter-spacing: 1px;
-  border-radius: 30px;
-  background: var(--main-Color);
-  border: none;
-  font-weight: 500;
-  cursor: pointer;
-}
-.regBtn a{
-  text-decoration: none;
-  color:#fff
-}
-
-.regBtn:hover{
-  background: var(--hover-Color);
-}
-.loginSignupSection .contentBx .formBx .inputBx input[type="submit"]:hover {
-  background: var(--hover-Color);
-}
-
-.loginSignupSection .contentBx .formBx .inputBx p {
-  color: var(--text-Color);
-}
-
-.loginSignupSection .contentBx .formBx .inputBx p a {
-  color: var(--main-Color);
-}
-
-.gifImage {
+.gifImg {
   position: absolute;
-  display: none;
-  width: 130px;
+  width: 175px;
 }
-.gifImage1 {
+
+.gifImg1 {
   top: 0;
   left: 0;
 }
-.gifImage2 {
+
+.gifImg2 {
   bottom: 0;
   right: 0;
 }
 
-@media (max-width: 1200px) {
-  .loginSignupSection .contentBx .formBx {
-    width: 70%;
-    height: 70%;
-    /* margin-bottom: 2rem; */
-  }
-  
-  .logo{
-    margin-top: 4rem;
-    width: 13rem;
-  }
+.LSDiv {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  border-radius: 22px 5px 22px 5px;
+  border: 2px solid var(--border-color);
 }
 
-@media (max-width: 850px) {
-  .gifImage {
-    display: block;
-  }
-  .loginSignupSection .imgBx {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 80%;
-    height: 80%;
-  }
-
-  .loginSignupSection .contentBx {
-    background: var(--background-Color);
-    width: 80%;
-    height: 80%;
-    z-index: 1;
-  }
-  .loginSignupSection .contentBx .formBx {
-    width: 80%;
-    padding: 40px;
-    margin: 0 5rem 2rem 5rem;
-  }
-  .logo{
-    margin-top: 5rem;
-    width: 10rem;
-  }
+.LSDiv h2 {
+  color: var(--main-color);
+  padding: 10px;
 }
 
-@media (max-width: 600px) {
-  .loginSignupSection .contentBx .formBx {
-    width: 100%;
-    padding: 4rem;
-    margin: 0 5rem 2rem 5rem;
-  }
-  
-  .logo{
-    margin-top: 4rem;
-    width: 10rem;
-  }
-}
-
-@media (max-width: 500px) {
-  .gifImage {
-    width: 25vw;
-  }
-  
-  .logo{
-    margin-top: 2rem;
-    width: 10rem;
-  }
-}
-/* ---------------- Nav Bar ------------- */
-
-nav{
+.LSDiv .LSBtsDiv {
+  padding: 10px;
   display: flex;
   align-items: center;
-  justify-content:space-between;
-  padding: 10px 20px 5px 20px;
-  border-bottom: 1.5px solid #000;
-  margin-bottom: 70px;
+  justify-content: space-around;
 }
 
-
-nav img{
-  width: 120px;
+input,
+select {
+  padding: 5px;
+  border-radius: var(--inputBx-border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  border: 2px solid var(--border-color);
+  outline: none;
 }
-/* ----------------Dashboard------------- */
 
-.dashboardSection {
-  min-height: 100vh;
+.LSDiv .LSDivInpDiv {
+  width: 100%;
   display: flex;
   align-items: center;
-  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px 0px 10px 0px;
 }
 
-.dashboard-content-table {
-  border-collapse: collapse;
-  margin: 25px 0;
-  width: 90vw;
-  border-radius: 5px 5px 0 0;
-  overflow: hidden;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.15);
-  font-weight: bold;
-}
-
-.dashboard-content-table thead tr {
-  background-color: var(--main-Color);
-  color: #fff;
-  text-align: left;
-  font-weight: bold;
-}
-
-.dashboard-content-table thead th {
-  padding: 8px;
-}
-
-.actionsTh{
+nav {
+  display: flex;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+  justify-content: space-between;
+  height: 70px;
+  border-bottom: 1.5px solid var(--border-color);
+  margin-bottom: 20px;
 }
 
-.actionsTh *{
-  margin-right: 20px;
+nav h1 {
   margin-left: 20px;
 }
 
-.dashboard-content-table td {
-  padding:10px;
+nav ul li {
+  list-style-type: none;
+  margin-right: 20px;
 }
-
-.dashboard-content-table tbody tr {
-  border-bottom: 1px solid #dddd;
-}
-
-.dashboard-content-table tbody {
-  color: var(--text-Color);
-  position: relative;
-}
-
-.dashboardUnPaid {
-  width: 5vw;
-  background-color: rgb(255, 71, 71);
-  color: #fff;
-}
-
-.dashboardPaid {
-  width: 5vw;
-  background-color: rgb(66, 122, 66);
-  color: #fff;
-}
-.dashboardTableBtn {
+nav ul {
   display: flex;
-  align-items: center;
-  justify-content:space-evenly;
-}
-
-.dashboardTableBtn button {
-  outline: none;
-  border: none;
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.dashboardTableDelete {
-  background-color:var(--main-Color);
-  color:#fff;
-}
-.dashboardTableDelete:hover{
-  background-color: rgb(253, 53, 53);
-}
-.dashboardTableDelete a{
-  text-decoration: none;
-  color:#fff;
-}
-.dashboardTableUpdate {
-  background-color:var(--main-Color);
-  color:#fff;
-}
-.dashboardTableUpdate:hover{
-  background-color: rgb(17, 136, 1);
-}
-.dashboardTableUpdate a{
-  text-decoration: none;
-  color:#fff;
-}
-
-.dahsboardForm{
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.dahsboardForm div{
+.dashboardForm {
+  display: flex;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.dashboardForm div {
   padding: 10px;
 }
 
-.dahsboardForm p{
-  text-align: center;
-  padding: 7px;
-  font-weight: bold;
-  color: var(--background-Color);
-  background-color:var(--main-Color);
-  border-radius: 10px 10px 0px 0px;
+.dashboardForm div p {
+  margin-bottom: 10px;
 }
 
-.dahsboardForm input,.dahsboardForm select{
-  margin-top: 5px;
-  padding: 5px;
-  border-radius: 15px;
-  outline: none;
-  border: 2px solid var(--text-Color);
-}
-.dahsboardForm select{
-  -webkit-appearance: none;
-   -moz-appearance: none;
-  width: 12rem;
-  color:var(--text-Color)
-}
-.dahsboardForm option{
-  background-color: #3357fc;
-  color:#fff;
-}
-
-.dahsboardForm button{
-  padding: 5px 10px 5px 10px;
-  border-radius: 7px;
-  font-weight: 500;
-  color: #ffff;
-  cursor: pointer;
-  background-color: var(--main-Color);
-  outline: none;
-  border: none;
-}
-
-/* V styles this */
-.olinks{
+.dashboardSection {
+  width: 100%;
   display: flex;
-  justify-content:flex-start;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
 }
-.olinks div{
-  margin: 0 1rem;
+
+.dashboardTable {
+  border-collapse: collapse;
+  margin: 25px 0;
+  border-radius: 15px 15px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+  width: 100%;
+  max-width: 1400px;
 }
-tbody .error{
-  position:absolute;
-  top:0;
-  left:0;
-  transition: all 3s;
+
+.dashboardTable thead tr {
+  background-color: var(--main-color);
+  text-align: left;
+  color: #ffff;
+}
+
+.dashboardTable thead th {
+  padding: 8px;
+}
+
+.dashboardTable td {
+  padding: 10px;
+}
+
+.dashboardTable tbody tr {
+  border-bottom: 1px solid #dddd;
+}
+
+.dashboardTable tbody {
+  color: var(--text-Color);
+  position: relative;
+}
+
+.dashboardtableUD {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.dashboardUnPaid {
+  background-color: red;
+  color: #ffff;
+}
+
+.dashboardPaid {
+  background-color: green;
+  color: #ffff;
+}
+
+.dashboardAdd {
+  align-self: flex-end;
 }
