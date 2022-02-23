@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 21, 2022 at 04:27 AM
+-- Generation Time: Feb 23, 2022 at 06:26 AM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -39,7 +39,9 @@ CREATE TABLE IF NOT EXISTS `login` (
 --
 
 INSERT INTO `login` (`user_id`, `password`) VALUES
+('abhinav', 12),
 ('admin', 123),
+('kushal', 2203),
 ('varun', 1234);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

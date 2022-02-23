@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 11, 2022 at 01:01 PM
+-- Generation Time: Feb 23, 2022 at 06:26 AM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -41,6 +41,9 @@ CREATE TABLE IF NOT EXISTS `customer` (
 
 INSERT INTO `customer` (`cname`, `mobile`) VALUES
 ('kushal gohil', 7040099240),
+('abhinav bankar', 7771552345),
+('deva varma', 9158848876),
+('krushna bankar ', 9178427563),
 ('varun', 9552726547);
 
 -- --------------------------------------------------------
@@ -57,14 +60,15 @@ CREATE TABLE IF NOT EXISTS `item` (
   `category` varchar(15) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `iname` (`iname`,`category`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `item`
 --
 
 INSERT INTO `item` (`id`, `iname`, `iprice`, `qty`, `category`) VALUES
-(3, 'masoor', 110, 10, 'cereals');
+(3, 'masoor', 110, 10, 'cereals'),
+(4, 'laptop', 65000, 5, 'gadgets');
 
 -- --------------------------------------------------------
 
@@ -86,17 +90,16 @@ CREATE TABLE IF NOT EXISTS `sale` (
   `estatus` varchar(20) NOT NULL,
   PRIMARY KEY (`sid`),
   UNIQUE KEY `sid` (`sid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=143 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=146 ;
 
 --
 -- Dumping data for table `sale`
 --
 
 INSERT INTO `sale` (`sid`, `sdate`, `stime`, `cname`, `iname`, `iqty`, `iprice`, `stotal`, `amtpaid`, `amtdue`, `estatus`) VALUES
-(139, '2011-01-22', '06:21:56', 'kushal gohil', 'laptop', 1, 67000, 67000, 67000, 0, 'Paid'),
-(140, '2011-01-22', '06:22:58', 'varun anand', 'headphones', 2, 2400, 4800, 3800, 1000, 'UnPaid'),
-(141, '2011-01-22', '06:24:50', 'abhinav bankar', 'pakistan', 1, 2, 2, 2, 0, 'Paid'),
-(142, '2011-01-22', '06:30:59', 'deva varma', 'instagram Ltd.', 1, 20000000, 20000000, 15000000, 5000000, 'UnPaid');
+(139, '2011-01-22', '06:21:56', 'kushal gohil', 'laptop', 1, 65000, 65000, 60000, 5000, 'UnPaid'),
+(144, '2023-02-22', '12:41:56', 'deva varma', 'masoor', 2, 50, 100, 100, 0, 'Paid'),
+(145, '2023-02-22', '11:42:55', 'abhinav bankar', 'masoor', 3, 45, 135, 130, 5, 'UnPaid');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

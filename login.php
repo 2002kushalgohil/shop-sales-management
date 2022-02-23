@@ -39,7 +39,10 @@
 <?php
 include('conn.php');
 if (isset($_POST['submit'])) {
-    if (!($_POST['username'] == 'admin')) {
+    // mysqli_select_db($conn, 'user') or die(mysqli_error($conn));
+    // $adminpwd = mysqli_query($conn, "SELECT  FROM login WHERE user_id='admin'");
+    if (!($_POST['username'] == 'admin' && $_POST['password'] == 123)) {
+        
         if (!empty($_POST['username']) && !empty($_POST['password'])) {
             $user = $_POST['username'];
             $pass = $_POST['password'];
@@ -56,15 +59,18 @@ if (isset($_POST['submit'])) {
                     $_SESSION['sess_user'] = $user;
                     header("location: dashboard.php");
                 } else {
+                    // echo '<script>';
+                    // echo 'alert("Invalid username or password")';
+                    // echo '</script>';
                     echo '<script>';
                     echo 'alert(" User Not Found")';
                     echo '</script>';
                 }
-            } else {
-                echo '<script>';
-                echo 'alert("Invalid username or password")';
-                echo '</script>';
-            }
+            } else {   
+                    echo '<script>';
+                    echo 'alert("Invalid username or password")';
+                    echo '</script>';
+                }
         } else {
             echo '<script>';
             echo ' alert("All fields are required")';
