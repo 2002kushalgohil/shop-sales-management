@@ -64,10 +64,10 @@ if (!isset($_SESSION['sess_user'])) {
                     ?>
                 </select>
             </div>
-            <div>
+            <!-- <div>
                 <p>Item Price</p>
                 <input type="number" name="iprice">
-            </div>
+            </div> -->
             <div>
                 <p>Quantity</p>
                 <input type="number" name="iqty">
@@ -109,7 +109,11 @@ if (!isset($_SESSION['sess_user'])) {
                             mysqli_select_db($conn, 'sam') or die("cannot select DB");
                             $cname = $_POST['cname'];
                             $iname = strtolower($_POST['iname']);
-                            $iprice = $_POST['iprice'];
+                            $ipquery = mysqli_query($conn,"SELECT iprice FROM item WHERE iname='$iname'");
+                            if (mysqli_num_rows($ipquery) > 0) {
+                                while ($row = mysqli_fetch_assoc($ipquery)){
+                                    $iprice=$row['iprice'];
+                                }}
                             $amtpaid = $_POST['amtpaid'];
                             $iqty = $_POST['iqty'];
                             date_default_timezone_set('Asia/Kolkata');
@@ -122,7 +126,7 @@ if (!isset($_SESSION['sess_user'])) {
                             } else {
                                 $status = "Paid";
                             }
-                            $query = mysqli_query($conn, "INSERT INTO sale(sid,sdate,stime,cname,iname,iqty,iprice,stotal,amtpaid,amtdue,estatus) VALUES ('','$sdate','$stime','$cname','$iname','$iqty','$iprice','$total','$amtpaid','$amtdue','$status')");
+                            $query = mysqli_query($conn, "INSERT INTO sale(sid,sdate,stime,cname,iname,iqty,stotal,amtpaid,amtdue,estatus) VALUES ('','$sdate','$stime','$cname','$iname','$iqty','$total','$amtpaid','$amtdue','$status')");
                             if ($query) {
                                 echo '<script>';
                                 echo 'alert("RECORD INSERTED SUCCESSFULLY ");';

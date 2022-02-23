@@ -4,6 +4,10 @@ $id = $_GET['id'];
 mysqli_select_db($conn, 'sam') or die(mysqli_error($conn));
 $qry = mysqli_query($conn, "SELECT * FROM sale WHERE sid='$id'");
 $data = mysqli_fetch_array($qry);
+$iname=$data['iname'];
+$ipquery = mysqli_query($conn,"SELECT iprice FROM item WHERE iname='$iname'");
+    if (mysqli_num_rows($ipquery) > 0) {
+    $row = mysqli_fetch_assoc($ipquery);}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +43,7 @@ $data = mysqli_fetch_array($qry);
                 </div>
                 <div class="LSDivInpDiv">
                     <p>Item Price</p>
-                    <input type="number" name="iprice" value="<?php echo $data['iprice'] ?>" placeholder="Item price" Required>
+                    <input type="number" name="iprice" value="<?php echo $row['iprice'] ?>" placeholder="Item price" Required>
                 </div>
                 <div class="LSDivInpDiv">
                     <p>Amount Paid</p>
