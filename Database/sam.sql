@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 23, 2022 at 06:26 AM
+-- Generation Time: Feb 23, 2022 at 09:47 AM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -42,6 +42,7 @@ CREATE TABLE IF NOT EXISTS `customer` (
 INSERT INTO `customer` (`cname`, `mobile`) VALUES
 ('kushal gohil', 7040099240),
 ('abhinav bankar', 7771552345),
+('abcd', 8854316750),
 ('deva varma', 9158848876),
 ('krushna bankar ', 9178427563),
 ('varun', 9552726547);
