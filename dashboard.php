@@ -109,11 +109,12 @@ if (!isset($_SESSION['sess_user'])) {
                             mysqli_select_db($conn, 'sam') or die("cannot select DB");
                             $cname = $_POST['cname'];
                             $iname = strtolower($_POST['iname']);
-                            $ipquery = mysqli_query($conn,"SELECT iprice FROM item WHERE iname='$iname'");
+                            $ipquery = mysqli_query($conn, "SELECT iprice FROM item WHERE iname='$iname'");
                             if (mysqli_num_rows($ipquery) > 0) {
-                                while ($row = mysqli_fetch_assoc($ipquery)){
-                                    $iprice=$row['iprice'];
-                                }}
+                                while ($row = mysqli_fetch_assoc($ipquery)) {
+                                    $iprice = $row['iprice'];
+                                }
+                            }
                             $amtpaid = $_POST['amtpaid'];
                             $iqty = $_POST['iqty'];
                             date_default_timezone_set('Asia/Kolkata');
@@ -173,8 +174,6 @@ if (!isset($_SESSION['sess_user'])) {
                         </tr>
                 <?php
                     }
-                } else {
-                    echo '<h3> No Record found </h3>';
                 }
                 ?>
             </tbody>
