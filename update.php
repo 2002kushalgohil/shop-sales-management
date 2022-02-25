@@ -4,10 +4,11 @@ $id = $_GET['id'];
 mysqli_select_db($conn, 'sam') or die(mysqli_error($conn));
 $qry = mysqli_query($conn, "SELECT * FROM sale WHERE sid='$id'");
 $data = mysqli_fetch_array($qry);
-$iname=$data['iname'];
-$ipquery = mysqli_query($conn,"SELECT iprice FROM item WHERE iname='$iname'");
-    if (mysqli_num_rows($ipquery) > 0) {
-    $row = mysqli_fetch_assoc($ipquery);}
+$iname = $data['iname'];
+$ipquery = mysqli_query($conn, "SELECT iprice FROM item WHERE iname='$iname'");
+if (mysqli_num_rows($ipquery) > 0) {
+    $row = mysqli_fetch_assoc($ipquery);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,8 +81,9 @@ if (isset($_POST['update'])) {
         iqty='$iqty',stotal='$stotal',amtpaid='$amtpaid',amtdue='$amtdue',estatus='$status' WHERE sid='$id'");
 
     if ($edit) {
+        echo "<script>alert('Data Updated Successfully')</script>";
         mysqli_close($db);
-        header("location:dashboard.php");
+        header("location: dashboard.php");
         exit;
     } else {
         echo mysqli_error($conn);
