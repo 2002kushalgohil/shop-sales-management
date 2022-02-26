@@ -198,3 +198,7 @@ nav ul {
 .dashboardAdd {
   align-self: flex-end;
 }
+
+.adminTopDiv {
+  padding: 0px 0px 0px 70px;
+}
