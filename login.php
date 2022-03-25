@@ -27,7 +27,7 @@
                     <input name="password" type="password" />
                 </div>
                 <div class="LSBtsDiv">
-                    <button class="btn"><a href="register.php">Create a Account</a></button>
+                    <button class="btn"><a href="register.php">Make a new account</a></button>
                     <button class="btn" type="submit" name="submit" value="sign in">Submit</button>
                 </div>
             </form>
